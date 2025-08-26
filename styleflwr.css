@@ -1,0 +1,294 @@
+:root{
+    --pink: #e84393;
+    --dark: #333;
+    --light: #666;
+}
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border: none;
+    text-decoration:none ;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+/* ✅ Reusable button */
+.btn {
+   display: inline-block; 
+   margin-top: 1rem;
+   border-radius: 5rem;
+   background: var(--pink);
+   color: #fff;
+   padding: .9rem 3.5rem ;
+   cursor: pointer;
+   font-size: 1.7rem;
+   font-weight: bold;
+   transition: 0.3s;
+}
+.btn:hover{
+   background: #ff0077;
+   transform: scale(1.05);
+}
+
+/* ✅ Header */
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem  rgba(0, 0, 0, .1);
+}
+header .logo{
+    font-size: 2.5rem;
+    color: var(--dark);
+    font-weight: bold;
+}
+header .logo span{
+    color: var(--pink);
+}
+header .navbar a{
+    font-size: 1.8rem;
+    padding: 0 1.5rem;
+    color: var(--light);
+}
+header .navbar a:hover{
+    color: var(--pink);
+}
+header .icons a{
+    font-size: 2.2rem;
+    color: var(--dark);
+    margin-left: 1.5rem ;
+    transition: 0.3s;
+}
+header .icons a:hover{
+    color: var(--pink);
+}
+header #toggler{
+    display: none;
+}
+header .fa-bars{
+    font-size:3rem ;
+    color: var(--dark);
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0 ,0, 0, .3);
+    display: none;
+} 
+
+/* ✅ Home section */
+.home{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background: url(flwr.jpg) no-repeat center center/cover;
+    padding-top: 8rem;
+}
+.home .content{
+    max-width: 50rem;
+}
+.home .content h1{
+    font-size: 6rem;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+.home .content span{
+    font-size: 3rem ;
+    color: yellow;
+    display: block;
+    margin: 1rem 0;
+}
+.home .content p{
+    font-size: 1.6rem ;
+    color:#eee;
+    padding: 1rem 0;
+    line-height: 1.6 ;
+}
+
+/* ✅ Products section */
+.products .box-container{
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 2rem;
+}
+.products .box{
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+.products .box:hover{
+    transform: translateY(-5px);
+}
+.products .discount{
+    position: absolute;
+    top: 10px; left: 10px;
+    background: var(--pink);
+    color: #fff;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    font-size: 1.4rem;
+}
+.products .image{
+    text-align: center;
+    padding: 2rem;
+}
+.products .image img{
+    height: 20rem;
+    transition: 0.3s;
+}
+.products .box:hover img{
+    transform: scale(1.1);
+}
+.products .image .icons{
+    margin-top: 1rem;
+}
+.products .image .icons a{
+    margin: 0 .5rem;
+    font-size: 2rem;
+    color: var(--pink);
+}
+.products .content{
+    text-align: center;
+    padding: 1.5rem;
+}
+.products .content h3{
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+.products .content .price{
+    font-size: 1.8rem;
+    color: var(--dark);
+}
+.products .content .price span{
+    text-decoration: line-through;
+    font-size: 1.5rem;
+    color: var(--light);
+    margin-left: 1rem;
+}
+
+/* ✅ Contact */
+.contact .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+.contact form{
+    flex: 1 1 40rem;
+    padding: 2rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border-radius: 1rem;
+    background: #fff;
+}
+.contact form .box{
+    padding:1rem ;
+    font-size: 1.6rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius:.5rem ;
+    margin: .7rem 0;
+    width: 100%;
+}
+.contact form .box:focus{
+    border-color: var(--pink);
+}
+.contact form textarea{
+    height: 15rem;
+    resize: none;
+}
+.contact .image{
+    flex: 1 1 40rem;
+}
+.contact .image img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+/* ✅ Footer */
+.footer .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 2rem;
+}
+.footer .box h3{
+    color: var(--dark);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.footer .box a{
+    display: block;
+    color: var(--light);
+    font-size: 1.5rem;
+    padding: .5rem 0;
+}
+.footer .box a:hover{
+    color: var(--pink);
+    text-decoration: underline;
+}
+.footer .credit{
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    border-top: .1rem solid rgba(0,0,0,.1);
+}
+.footer .credit span{
+    color: var(--pink);
+}
+
+/* ✅ Media Queries */
+@media (max-width: 991px) {
+    html{ font-size: 55%; }
+    header{ padding: 2rem; }
+}
+@media (max-width: 768px) {
+    header .fa-bars{ display: block; }
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        display: none;
+        flex-direction: column;
+    }
+    header #toggler:checked ~ .navbar{
+        display: flex;
+    }
+    header .navbar a{
+        margin: 1rem;
+        padding: 1rem;
+        background:#fff ;
+        border-radius: .5rem;
+    }
+    .home{
+        justify-content: center;
+        text-align: center;
+        padding: 5rem 2rem;
+    }
+    .home .content h1{ font-size: 4rem; }
+}
+@media (max-width: 450px){
+    html{ font-size: 50%; }
+    .home .content h1{ font-size: 3rem; }
+}
